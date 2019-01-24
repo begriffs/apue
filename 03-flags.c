@@ -5,16 +5,7 @@
 #include <string.h>
 #include <sys/types.h>
 
-void peace(const char *s, ...)
-{
-	va_list args;
-   
-	va_start(args, s);
-	vfprintf(stderr, s, args);
-
-	va_end(args);
-	exit(EXIT_FAILURE);
-}
+#include "helper.h"
 
 int main(int argc, char **argv)
 {
