@@ -1,11 +1,11 @@
+#include "helper.h"
+
 #include <fcntl.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
-
-#include "helper.h"
 
 int main(int argc, char **argv)
 {
@@ -28,6 +28,9 @@ int main(int argc, char **argv)
 		case O_WRONLY:
 			printf("Write only");
 			break;
+		case O_RDWR:
+			printf("Read write");
+			break;
 		default:
 			printf("Unknown access mode");
 	}
@@ -36,6 +39,8 @@ int main(int argc, char **argv)
 		printf(", append");
 	if (val & O_NONBLOCK)
 		printf(", nonblocking");
+	if (val & O_SYNC)
+		printf(", synchronous writes");
 
 	putchar('\n');
 }
