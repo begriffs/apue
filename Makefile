@@ -1,6 +1,6 @@
 CFLAGS = -std=c89 -D_POSIX_C_SOURCE=200809L -Wall -Wextra -Wpedantic -Wshadow -pedantic-errors
 
-PROGS = 03-seek 03-hole 03-flags
+PROGS = 03-seek 03-hole 03-flags 03-errout
 
 all: $(PROGS)
 
